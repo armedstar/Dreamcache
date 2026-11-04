@@ -1,0 +1,23 @@
+{
+  "slug": "dreamcache-modules",
+  "name": "Dreamcache Modules",
+  "version": "2.0.0",
+  "license": "MIT",
+  "brand": "Dreamcache",
+  "author": "Dreamcache",
+  "authorEmail": "",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "",
+  "sourceUrl": "",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "Sequencer8",
+      "name": "Sequencer 8",
+      "description": "8-step gate/trigger sequencer with large square step buttons",
+      "tags": ["Sequencer", "Clock generator"]
+    }
+  ]
+}
