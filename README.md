@@ -13,7 +13,7 @@ A VCV Rack module developed by Dreamcache
 
 *-Overview-*
 
-S E Q U E N C E R   8 is an 8-step gate/trigger sequencer designed around a single idea:
+D R E A M C A C H E is an 8-step gate/trigger sequencer designed around a single idea:
 
 xx Pattern as pulse xx
 
