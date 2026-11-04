@@ -62,6 +62,8 @@ Add **Dreamcache / Dreamcache** from the module browser.
 
 *-Module-*
 
+![Dreamcache](doc/Dreamcache.png)
+
 ~9 HP panel · clock knob · Hz display · 8 latch pads · clock + trig outs
 
 ----------------------------------------------------------------------------------
