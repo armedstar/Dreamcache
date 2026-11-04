@@ -56,7 +56,7 @@ Build from source (Rack SDK Makefile)
 
 4. Restart VCV Rack.
 
-Add **Dreamcache / Sequencer 8** from the module browser.
+Add **Dreamcache / Dreamcache** from the module browser.
 
 ----------------------------------------------------------------------------------
 

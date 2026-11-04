@@ -14,8 +14,8 @@
   "changelogUrl": "",
   "modules": [
     {
-      "slug": "Sequencer8",
-      "name": "Sequencer 8",
+      "slug": "Dreamcache",
+      "name": "Dreamcache",
       "description": "8-step gate/trigger sequencer with large square step buttons",
       "tags": ["Sequencer", "Clock generator"]
     }

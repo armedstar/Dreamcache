@@ -1,7 +1,7 @@
 #include "plugin.hpp"
 
 
-struct Sequencer8 : Module {
+struct Dreamcache : Module {
 	static const int NUM_STEPS = 8;
 
 	enum ParamId {
@@ -28,7 +28,7 @@ struct Sequencer8 : Module {
 	dsp::PulseGenerator trigPulse;
 	dsp::PulseGenerator clockPulse;
 
-	Sequencer8() {
+	Dreamcache() {
 		config(PARAMS_LEN, INPUTS_LEN, OUTPUTS_LEN, LIGHTS_LEN);
 		configParam(CLOCK_PARAM, -2.f, 4.f, 1.f, "Clock rate", " Hz", 2.f, 1.f);
 		configOutput(TRIG_OUTPUT, "Trigger");
@@ -130,7 +130,7 @@ static PanelLabel* createPanelLabel(Vec center, std::string text, float fontSize
 }
 
 struct ClockRateDisplay : LedDisplay {
-	Sequencer8* module;
+	Dreamcache* module;
 
 	void drawLayer(const DrawArgs& args, int layer) override {
 		if (layer != 1)
@@ -142,7 +142,7 @@ struct ClockRateDisplay : LedDisplay {
 
 		float freq = 2.f;
 		if (module)
-			freq = std::pow(2.f, module->params[Sequencer8::CLOCK_PARAM].getValue());
+			freq = std::pow(2.f, module->params[Dreamcache::CLOCK_PARAM].getValue());
 
 		std::string text;
 		if (freq < 10.f)
@@ -184,20 +184,20 @@ struct SquareStepButton : app::SvgSwitch {
 };
 
 
-struct Sequencer8Widget : ModuleWidget {
-	Sequencer8Widget(Sequencer8* module) {
+struct DreamcacheWidget : ModuleWidget {
+	DreamcacheWidget(Dreamcache* module) {
 		setModule(module);
 		setPanel(createPanel(
-			asset::plugin(pluginInstance, "res/Sequencer12.svg"),
-			asset::plugin(pluginInstance, "res/Sequencer12-dark.svg")));
+			asset::plugin(pluginInstance, "res/Dreamcache.svg"),
+			asset::plugin(pluginInstance, "res/Dreamcache-dark.svg")));
 
 		const float cx = 65.f;
 
-		addChild(createLightCentered<MediumLight<CyanLight>>(Vec(cx, 18.f), module, Sequencer8::CLOCK_LIGHT));
-		addParam(createParamCentered<RoundHugeBlackKnob>(Vec(cx, 62.f), module, Sequencer8::CLOCK_PARAM));
+		addChild(createLightCentered<MediumLight<CyanLight>>(Vec(cx, 18.f), module, Dreamcache::CLOCK_LIGHT));
+		addParam(createParamCentered<RoundHugeBlackKnob>(Vec(cx, 62.f), module, Dreamcache::CLOCK_PARAM));
 
 		// Display and step pads sit just above the output labels
-		ClockRateDisplay* display = createWidget<ClockRateDisplay>(Vec(cx - 35.f, 119.f));
+		ClockRateDisplay* display = createWidget<ClockRateDisplay>(Vec(cx - 35.f, 101.f));
 		display->box.size = Vec(70.f, 26.f);
 		display->module = module;
 		addChild(display);
@@ -205,22 +205,22 @@ struct Sequencer8Widget : ModuleWidget {
 		// 2 × 4 step pads (40px)
 		const float colX[2] = {43.f, 87.f};
 		const float rowPitch = 42.f;
-		const float originY = 171.f;
+		const float originY = 166.f;
 
-		for (int i = 0; i < Sequencer8::NUM_STEPS; i++) {
+		for (int i = 0; i < Dreamcache::NUM_STEPS; i++) {
 			int col = i / 4;
 			int row = i % 4;
 			addParam(createLightParamCentered<SquareStepButton>(
 				Vec(colX[col], originY + row * rowPitch),
-				module, Sequencer8::STEP_PARAM + i, Sequencer8::STEP_LIGHT + i));
+				module, Dreamcache::STEP_PARAM + i, Dreamcache::STEP_LIGHT + i));
 		}
 
-		addOutput(createOutputCentered<PJ301MPort>(Vec(40.f, 352.f), module, Sequencer8::CLOCK_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(Vec(90.f, 352.f), module, Sequencer8::TRIG_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(Vec(40.f, 352.f), module, Dreamcache::CLOCK_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(Vec(90.f, 352.f), module, Dreamcache::TRIG_OUTPUT));
 		addChild(createPanelLabel(Vec(40.f, 330.f), "clock", 13.f));
 		addChild(createPanelLabel(Vec(90.f, 330.f), "trig", 13.f));
 	}
 };
 
 
-Model* modelSequencer8 = createModel<Sequencer8, Sequencer8Widget>("Sequencer8");
+Model* modelDreamcache = createModel<Dreamcache, DreamcacheWidget>("Dreamcache");
