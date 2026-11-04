@@ -44,8 +44,8 @@ Designed for fast pattern sketching and classic rest-aware sequencing
 Build from source (Rack SDK Makefile)
 
 1. Clone this repository:
-   git clone https://github.com/armedstar/dreamcache-modules.git
-   cd dreamcache-modules
+   git clone https://github.com/armedstar/Dreamcache.git
+   cd Dreamcache
 
 2. Point Make to your Rack SDK location:
    export RACK_DIR=/path/to/Rack-SDK
