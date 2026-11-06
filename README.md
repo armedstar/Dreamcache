@@ -13,11 +13,21 @@ A VCV Rack module developed by Dreamcache
 
 *-Overview-*
 
-D R E A M C A C H E is an 8-step gate/trigger sequencer designed around a single idea:
+D R E A M C A C H E
 
-xx Pattern as pulse xx
+Some steps are just passing through. Others have something to say.
 
-Large latch pads, a free-running clock, and two clean outputs — clock every step, trigger only on hits.
+D R E A M C A C H E is an 8-step gate and trigger sequencer that gives your rhythms a place to dream.
+
+Eight big, friendly latch pads let you switch steps on and off. A free-running clock keeps marching along, completely unbothered by your decisions.
+
+Two outputs keep things interesting:
+
+CLOCK: Ticks along through every step.
+
+TRIGGER: Chimes in only when a step is switched on.
+
+Simple ingredients. Unexpected rhythms. Dreams in eight steps.
 
 ----------------------------------------------------------------------------------
 
@@ -62,9 +72,15 @@ Add **Dreamcache / Dreamcache** from the module browser.
 
 *-Module-*
 
-![Dreamcache](doc/Dreamcache.png)
+<img src="doc/Dreamcache.png" alt="Dreamcache" width="350">
 
 ~9 HP panel · clock knob · Hz display · 8 latch pads · clock + trig outs
+
+----------------------------------------------------------------------------------
+
+*-Demo-*
+
+https://youtu.be/aVkHgX56uiU
 
 ----------------------------------------------------------------------------------
 
